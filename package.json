@@ -1,0 +1,25 @@
+{
+  "name": "dajungpay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "HANEUNJIN",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^9.5.5",
+    "next-images": "^1.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "styled-components": "^5.2.0",
+    "styled-reset": "^4.2.3"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
+  }
+}
