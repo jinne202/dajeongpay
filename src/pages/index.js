@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import logoImg from '../data/img/logo.png'
 import titleImg from '../data/img/start_title_big.png'
-import CommonButton from '../components/buttonComp';
+import CommonButton from '../components/commonButton';
 
 const HOME = () => {
     return(
