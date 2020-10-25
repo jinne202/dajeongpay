@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import CommonButton from '../components/buttonComp';
+import CommonButton from '../components/ButtonComp';
+import CurrentState from '../components/CurrentState';
 import titleImgMini from '../data/img/main_title_mini.png';
 import backgroundImg from '../data/img/main_bg.png';
-import subTitleImg1 from '../data/img/backer.png';
-import subTitleImg2 from '../data/img/day.png';
-import subTitleImg3 from '../data/img/status.png';
 import mainMockup from '../data/img/main_mockup.png';
 import mainImg from '../data/img/main_img1.png';
 import mainGraphTitle from '../data/img/main_graph_title.png';
@@ -25,20 +23,7 @@ const MainPage = () => {
                     </MainTextStyle>
                 </TopLeftWrapper>
                 <TopRightWrapper>
-                    <ul>
-                        <ListBorderStyle>
-                            <p>60</p>
-                            <span><img src={subTitleImg1} alt={subTitleImg1}/></span>
-                        </ListBorderStyle>
-                        <ListBorderStyle>
-                            <p>30</p>
-                            <span><img src={subTitleImg2} alt={subTitleImg2}/></span>
-                        </ListBorderStyle>
-                        <ListStyle>
-                            <p>65%</p>
-                            <span><img src={subTitleImg3} alt={subTitleImg3}/></span>
-                        </ListStyle>
-                    </ul>
+                    <CurrentState/>
                 </TopRightWrapper>
             </TopWrapper>
             <MiddelWrapper>
@@ -67,7 +52,7 @@ const MainPage = () => {
                 </GraphNumBack>
             </BottomWrapper>
             <Link href="/select">
-                <div style={{position:"absolute", margin : "10px 0 70px", right : 120}}>
+                <div style={{position:"absolute", bottom : 60, right : 120}}>
                 <CommonButton title="펀딩하기"/>
                 </div>
             </Link>
@@ -78,14 +63,14 @@ const MainPage = () => {
 const BackgroundWrapper = styled.div`
     background-image: url(${backgroundImg});
     width : 1920px;
-    height : 1080px;
+    height : 980px;
     top : 0;
     position : absolute;
 `
 
 const TopWrapper = styled.div`
     width : 1200px;
-    margin : 129px auto 79px;
+    margin : 100px auto 35px;
     display: flex;
     justify-content : space-between;
 `
@@ -105,31 +90,6 @@ const MainTextStyle = styled.p`
     letter-spacing : -0.48px;
     margin:30px 0 0 0;
     width : 650px;
-`
-
-const ListStyle = styled.li`
-    float : left;
-    width : 160px;
-    text-align : center;
-    height : 100px;
-
-    & > p {
-        font-size : 45px;
-        margin : 10px 0 0 0;
-        line-height : 45px;
-        color : #ff6464;
-    }
-
-    & > span {
-        margin-top : 9px;
-        display : inline-block;
-    }
-`
-
-const ListBorderStyle = styled(ListStyle)`
-    border : 0;
-    border-right : 1px solid #ff6464;
-    border-style: dashed;
 `
 
 const MiddelWrapper = styled.div`
@@ -158,7 +118,7 @@ const LeftImg = styled.div`
 
 const BottomWrapper = styled.div`
     width : 1200px;
-    margin : 40px auto 0;
+    margin : 4px auto 0;
 `
 
 const GraphTitle = styled.div`

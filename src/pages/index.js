@@ -22,7 +22,7 @@ const HOME = () => {
 
 const MainWrapper = styled.div`
     width : 532px;
-    margin : 341px auto 0;
+    margin : 286px auto 0;
 `
 
 const ImageCommon = styled.img`
