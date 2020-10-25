@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport SelectCard from '../components/SelectCard';\n\nvar test = function test() {\n  return __jsx(\"div\", null, __jsx(\"p\", null, \"\\uD14C\\uC2A4\\uD2B8 \"), __jsx(SelectCard, {\n    id: \"joy\"\n  }));\n};\n\nexport default test;","map":null,"metadata":{},"sourceType":"module"}
