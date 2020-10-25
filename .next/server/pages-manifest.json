@@ -1,10 +1,6 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.html",
-  "/main": "pages/main.html",
-  "/select": "pages/select.html",
-  "/test": "pages/test.html",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html"
+  "/select": "pages/select.js"
 }

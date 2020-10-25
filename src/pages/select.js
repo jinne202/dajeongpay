@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import CommonButton from '../components/ButtonComp';
-import CurrentState from '../components/CurrentState';
-import SelectCard from '../components/SelectCard'
+import CommonButton from '../components/commonButton';
+import CurrentState from '../components/currentState';
+import SelectCard from '../components/selectCard'
 import backgroundImg from '../data/img/select_bg.png';
 import rewordTitle from '../data/img/reword_title.png';
 import selectGraphTitle from '../data/img/select_graph.png';
