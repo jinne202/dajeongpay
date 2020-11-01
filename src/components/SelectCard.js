@@ -14,7 +14,7 @@ import unPink from '../data/img/un_pink.png';
 import unWhite from '../data/img/un_white.png';
 import fundingImg4 from '../data/img/funding_img4.png';
 import { selectEmotionAction } from '../reducers/selectedReducer';
-
+// 깃 추가용
 const SelectCard = (props) => {
     const dispatch = useDispatch();
     const { emotionCard } = useSelector((state) => state.selectedReducer);
@@ -101,13 +101,6 @@ const SelectBox = styled.div`
 
     ${props =>
     props.check &&
-    css`
-      background : #ff7b7b;
-      border : 3px solid #ff6464;
-    `}
-
-    ${props =>
-    props.checkJoy &&
     css`
       background : #ff7b7b;
       border : 3px solid #ff6464;

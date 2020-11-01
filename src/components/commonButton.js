@@ -8,7 +8,7 @@ const CommonButton = (props) => {
         </ButtonStyle>
     )
 };
-
+// 깃깃
 const ButtonStyle = styled.button`
     width : 200px;
     height : 60px;

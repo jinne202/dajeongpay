@@ -5,7 +5,8 @@ import subTitleImg1 from '../data/img/backer.png';
 import subTitleImg2 from '../data/img/day.png';
 import subTitleImg3 from '../data/img/status.png';
 
-// * 오른쪽 위쪽 후원자, 남은 기간, 전체 펀딩 현황
+// * 오른쪽 위쪽 후원자, 남은 기간, 전체 펀딩 현황 깃깃
+// 깃 추가용
 const CurrentState = () => {
     const { joyNumber, kindNumber, thanksNumber, unComfNumber } = useSelector((state) => state.countReducer);
 

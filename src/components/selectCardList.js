@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import SelectCard from '../components/selectCard'
+import SelectCard from './selectCard'
 import styled, { css } from 'styled-components';
 
 const SelectCardList = () => {
@@ -21,7 +21,7 @@ const SelectCardList = () => {
         </div>
     )
 }
-
+// 깃 추가용
 const SelectCardWrapper = styled.div`
     margin-bottom : 31px;
 `
