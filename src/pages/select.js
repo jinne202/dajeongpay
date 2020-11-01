@@ -1,15 +1,35 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import CommonButton from '../components/commonButton';
 import CurrentState from '../components/currentState';
-import SelectCard from '../components/selectCard'
+import SelectCardList from '../components/selectCardList'
 import backgroundImg from '../data/img/select_bg.png';
 import rewordTitle from '../data/img/reword_title.png';
 import selectGraphTitle from '../data/img/select_graph.png';
 import graphBubble from '../data/img/select_graph_bubble.png';
+import { joyIncrementAction, kindIncrementAction, thanksIncrementAction, unIncrementAction } from '../reducers/countReducer';
 
 const SelectPage = () => {
+    const dispatch = useDispatch();
+    const { emotionCard } = useSelector((state) => state.selectedReducer);
+    const { joyNumber, kindNumber, thanksNumber, unComfNumber } = useSelector((state) => state.countReducer);
+
+    const emotionId = emotionCard.selectId
+
+    const handleCountClick = () => {
+        if (emotionId === "joy") {
+            dispatch(joyIncrementAction());
+        } else if (emotionId === "kind") {
+            dispatch(kindIncrementAction());
+        } else if (emotionId === "thanks") {
+            dispatch(thanksIncrementAction());
+        } else if (emotionId === "uncomfortable") {
+            dispatch(unIncrementAction());
+        }
+    }
+
     return (
         <BackgroundWrapper>
             <TopWrapper>
@@ -25,18 +45,7 @@ const SelectPage = () => {
             </TopWrapper>
             <MiddleWrapper>
                 <MiddleLeftWrapper>
-                    <SelectCardWrapper>
-                        <SelectCard id="joy"/>
-                    </SelectCardWrapper>
-                    <SelectCardWrapper>
-                        <SelectCard id="kind"/>
-                    </SelectCardWrapper>
-                    <SelectCardWrapper>
-                        <SelectCard id="thanks"/>
-                    </SelectCardWrapper>
-                    <SelectCardWrapper>
-                        <SelectCard id="un"/>
-                    </SelectCardWrapper>
+                    <SelectCardList/>
                 </MiddleLeftWrapper>
                 <MiddelRightWrapper>
                     <GraphTitle>
@@ -46,48 +55,48 @@ const SelectPage = () => {
                         <GraphCard>
                             <GraphBubbleWrapper>
                                 <img src={graphBubble}/>
-                                <p>65%</p>
+                                <p>{joyNumber}%</p>
                             </GraphBubbleWrapper>
                             <GraphBackground>
-                                <GraphFunctionJoy></GraphFunctionJoy>
+                                <GraphFunctionJoy height={joyNumber}></GraphFunctionJoy>
                             </GraphBackground>
                             <GraphSubTitle>기쁨</GraphSubTitle>
                         </GraphCard>
                         <GraphCard>
                             <GraphBubbleWrapper>
                                 <img src={graphBubble}/>
-                                <p>65%</p>
+                                <p>{kindNumber}%</p>
                             </GraphBubbleWrapper>
                             <GraphBackground>
-                                <GraphFunctionKind></GraphFunctionKind>
+                                <GraphFunctionKind height={kindNumber}></GraphFunctionKind>
                             </GraphBackground>
                             <GraphSubTitle>다정</GraphSubTitle>
                         </GraphCard>
                         <GraphCard>
                             <GraphBubbleWrapper>
                                 <img src={graphBubble}/>
-                                <p>65%</p>
+                                <p>{thanksNumber}%</p>
                             </GraphBubbleWrapper>
                             <GraphBackground>
-                                <GraphFunctionThanks></GraphFunctionThanks>
+                                <GraphFunctionThanks height={thanksNumber}></GraphFunctionThanks>
                             </GraphBackground>
                             <GraphSubTitle>감사</GraphSubTitle>
                         </GraphCard>
                         <GraphCard>
                             <GraphBubbleWrapper>
                                 <img src={graphBubble}/>
-                                <p>65%</p>
+                                <p>{unComfNumber}%</p>
                             </GraphBubbleWrapper>
                             <GraphBackground>
-                                <GraphFunctionUn></GraphFunctionUn>
+                                <GraphFunctionUn height={unComfNumber}></GraphFunctionUn>
                             </GraphBackground>
                             <GraphSubTitle>불편</GraphSubTitle>
                         </GraphCard>
                     </GraphWrapper>
                 </MiddelRightWrapper>
             </MiddleWrapper>
-            <Link href="/test">
-                <div style={{position:"absolute", bottom : 60, right : 120}}>
+            <Link href="/ending">
+                <div style={{position:"absolute", bottom : 60, right : 120}}  onClick={handleCountClick}>
                 <CommonButton title="신청하기"/>
                 </div>
             </Link>
@@ -137,9 +146,6 @@ const MiddleLeftWrapper = styled.div`
     width : 750px;
 `
 
-const SelectCardWrapper = styled.div`
-    margin-bottom : 31px;
-`
 
 const MiddelRightWrapper = styled.div`
     width : 334px;
@@ -198,22 +204,22 @@ const GraphFunction = styled.div`
 
 const GraphFunctionJoy = styled(GraphFunction)`
     background-color : #ff908a;
-    height : 65%;
+    height : ${props => props.height}%
 `
 
 const GraphFunctionKind = styled(GraphFunction)`
     background-color : #ffe1e9;
-    height : 65%;
+    height : ${props => props.height}%
 `
 
 const GraphFunctionThanks = styled(GraphFunction)`
     background-color : #fff8d9;
-    height : 65%;
+    height : ${props => props.height}%
 `
 
 const GraphFunctionUn = styled(GraphFunction)`
     background-color : #def3ff;
-    height : 65%;
+    height : ${props => props.height}%
 `
 
 const GraphSubTitle = styled.div`

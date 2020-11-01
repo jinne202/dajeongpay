@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 import subTitleImg1 from '../data/img/backer.png';
 import subTitleImg2 from '../data/img/day.png';
 import subTitleImg3 from '../data/img/status.png';
 
 // * 오른쪽 위쪽 후원자, 남은 기간, 전체 펀딩 현황
 const CurrentState = () => {
+    const { joyNumber, kindNumber, thanksNumber, unComfNumber } = useSelector((state) => state.countReducer);
+
+    const plusAll = joyNumber + kindNumber + thanksNumber + unComfNumber
+
     return (
         <ul>
             <ListBorderStyle>
@@ -17,7 +22,7 @@ const CurrentState = () => {
                 <span><img src={subTitleImg2} alt={subTitleImg2}/></span>
             </ListBorderStyle>
             <ListStyle>
-                <p>65%</p>
+                <p>{plusAll}%</p>
                 <span><img src={subTitleImg3} alt={subTitleImg3}/></span>
             </ListStyle>
         </ul>

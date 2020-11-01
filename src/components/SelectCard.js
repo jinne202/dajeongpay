@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import joyPink from '../data/img/joy_pink.png';
 import joyWhite from '../data/img/joy_white.png';
@@ -12,14 +13,23 @@ import fundingImg3 from '../data/img/funding_img3.png';
 import unPink from '../data/img/un_pink.png';
 import unWhite from '../data/img/un_white.png';
 import fundingImg4 from '../data/img/funding_img4.png';
+import { selectEmotionAction } from '../reducers/selectedReducer';
 
 const SelectCard = (props) => {
-
+    const dispatch = useDispatch();
+    const { emotionCard } = useSelector((state) => state.selectedReducer);
+    const [checkJoy, setCheckJoy] = useState(false);
     const [check, setCheck] = useState(false);
+    const [emotionId, setEmotionId] = useState(emotionCard)
+    const selectId = props.id
+   
+    useEffect(() => {
+       if (emotionCard) setEmotionId(emotionCard.selectId)
+    },[emotionCard])
 
     const handleClick = (e) => {
+        dispatch((selectEmotionAction({selectId})));
         setCheck(!check);
-        console.log(check, props.id);
     }
 
     if (props.id === "joy"){
@@ -58,7 +68,7 @@ const SelectCard = (props) => {
                 </SelectBox_Right_3>
             </SelectBox>
         )
-    } else if (props.id === "un") {
+    } else if (props.id === "uncomfortable") {
         return (
             <SelectBox onClick={handleClick} check={check}>
                 <SelectBox_Left>
@@ -91,6 +101,13 @@ const SelectBox = styled.div`
 
     ${props =>
     props.check &&
+    css`
+      background : #ff7b7b;
+      border : 3px solid #ff6464;
+    `}
+
+    ${props =>
+    props.checkJoy &&
     css`
       background : #ff7b7b;
       border : 3px solid #ff6464;
@@ -142,6 +159,12 @@ const SelectText = styled.p`
 
     ${props =>
     props.check &&
+    css`
+      color : white;
+    `}
+
+    ${props =>
+    props.checkJoy &&
     css`
       color : white;
     `}

@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
 import CommonButton from '../components/commonButton';
 import CurrentState from '../components/currentState';
 import titleImgMini from '../data/img/main_title_mini.png';
@@ -11,6 +12,16 @@ import mainGraphTitle from '../data/img/main_graph_title.png';
 import mainGraphBox from '../data/img/main_graph_box.png';
 
 const MainPage = () => {
+    const { joyNumber, kindNumber, thanksNumber, unComfNumber } = useSelector((state) => state.countReducer);
+
+    const plusAll = joyNumber + kindNumber + thanksNumber + unComfNumber;
+    let fullNumber = null;
+    if (plusAll > 100) {
+        fullNumber = 99
+    } else {
+        fullNumber = plusAll
+    }
+    console.log(fullNumber, "fullnumber")
     return (
         <BackgroundWrapper>
             <TopWrapper>
@@ -40,13 +51,11 @@ const MainPage = () => {
                 </GraphTitle>
                 <GraphWrapper>
                     <GraphBackground></GraphBackground>
-                    {/* 이 밑 그래프는 함수 처리 에정 */}
-                    <GraphFunction></GraphFunction>
-                    {/* 함수 처리 예정 */}
+                    <GraphFunction width={fullNumber}></GraphFunction>
                 </GraphWrapper>
-                <GraphNumBack>
+                <GraphNumBack width={fullNumber}>
                     {/* 함수처리 할 곳 */}
-                    <p>65%</p>
+                    <p>{plusAll}%</p>
                     {/* 함수처리 할 곳 */}
                     <img src={mainGraphBox}/>
                 </GraphNumBack>
@@ -143,24 +152,25 @@ const GraphFunction = styled.div`
     background-color : #ff908a;
     position : absolute;
     z-index : 999;
-    width : 65%;
+    width : ${props => props.width}%;
     height : 28px;
     top : 6px;
     left : 6px;
-    border-radius : 40px 20px 20px 40px;
+    border-radius : 40px;
 `
 
 const GraphNumBack = styled.div`
     height : 92px;
-    margin-left : calc(65% - 60px);
+    margin-left : calc((${props => props.width}%) - 60px);
     position : relative;
 
     & > p {
         position : absolute;
         font-size : 36px;
         color : #ff7b7b;
-        margin : 26px 32px 0;
+        margin : 26px 3px 0;
         text-align : center;
+        width : 125px;
     }
 `
 

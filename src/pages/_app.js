@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import '../styles/global.css';
+import wrapper from '../store/configureStore';
 
 const Dajeongpay = ({ Component }) => {
   return (
@@ -18,4 +19,4 @@ Dajeongpay.propTypes = {
   Component: PropTypes.elementType.isRequired,
 };
 
-export default Dajeongpay;
+export default wrapper.withRedux(Dajeongpay);
