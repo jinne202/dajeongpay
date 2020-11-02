@@ -2,23 +2,34 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import CommonButton from '../components/commonButton';
-import CurrentState from '../components/currentState';
-import SelectCardList from '../components/selectCardList'
+import swal from 'sweetalert';
+import CommonButton from '../components/CommonButton';
+import CurrentState from '../components/CurrentState';
+import SelectCardList from '../components/SelectCardList'
 import backgroundImg from '../data/img/select_bg.png';
 import rewordTitle from '../data/img/reword_title.png';
 import selectGraphTitle from '../data/img/select_graph.png';
 import graphBubble from '../data/img/select_graph_bubble.png';
-import { joyIncrementAction, kindIncrementAction, thanksIncrementAction, unIncrementAction } from '../reducers/countReducer';
+import { joyIncrementAction, kindIncrementAction, thanksIncrementAction, unIncrementAction, peopleIncrementAction } from '../reducers/countReducer';
 
 const SelectPage = () => {
     const dispatch = useDispatch();
     const { emotionCard } = useSelector((state) => state.selectedReducer);
     const { joyNumber, kindNumber, thanksNumber, unComfNumber } = useSelector((state) => state.countReducer);
 
-    const emotionId = emotionCard.selectId
+    const emotionId = emotionCard.checkedId
 
-    const handleCountClick = () => {
+    const handleCountClick = (e) => {
+        if (emotionId === null) {
+            e.preventDefault();
+            swal({
+                title: "펀딩할 항목을 선택해주세요",
+                text: " ",
+                icon: "warning",
+                button : false
+            });
+        } else {
+        dispatch(peopleIncrementAction());
         if (emotionId === "joy") {
             dispatch(joyIncrementAction());
         } else if (emotionId === "kind") {
@@ -27,6 +38,7 @@ const SelectPage = () => {
             dispatch(thanksIncrementAction());
         } else if (emotionId === "uncomfortable") {
             dispatch(unIncrementAction());
+        } 
         }
     }
 

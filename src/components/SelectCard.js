@@ -1,86 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import styled, { css } from 'styled-components';
-import joyPink from '../data/img/joy_pink.png';
-import joyWhite from '../data/img/joy_white.png';
-import fundingImg1 from '../data/img/funding_img1.png';
-import kindPink from '../data/img/kind_pink.png';
-import kindWhite from '../data/img/kind_white.png';
-import fundingImg2 from '../data/img/funding_img2.png';
-import thanksPink from '../data/img/thanks_pink.png';
-import thanksWhite from '../data/img/thanks_white.png';
-import fundingImg3 from '../data/img/funding_img3.png';
-import unPink from '../data/img/un_pink.png';
-import unWhite from '../data/img/un_white.png';
-import fundingImg4 from '../data/img/funding_img4.png';
-import { selectEmotionAction } from '../reducers/selectedReducer';
 // 깃 추가용
+
 const SelectCard = (props) => {
-    const dispatch = useDispatch();
-    const { emotionCard } = useSelector((state) => state.selectedReducer);
-    const [checkJoy, setCheckJoy] = useState(false);
-    const [check, setCheck] = useState(false);
-    const [emotionId, setEmotionId] = useState(emotionCard)
-    const selectId = props.id
-   
-    useEffect(() => {
-       if (emotionCard) setEmotionId(emotionCard.selectId)
-    },[emotionCard])
-
-    const handleClick = (e) => {
-        dispatch((selectEmotionAction({selectId})));
-        setCheck(!check);
-    }
-
-    if (props.id === "joy"){
-        return (
-            <SelectBox onClick={handleClick} check={check}>
-                <SelectBox_Left>
-                    <img src={check ? joyWhite : joyPink}/>
-                    <SelectText check={check}>당신이 '기쁨'을 느꼈다면 기쁜 감정을 펀딩 해주세요</SelectText>
-                </SelectBox_Left>
-                <SelectBox_Right_1>
-                    <img src={fundingImg1}/>
-                </SelectBox_Right_1>
-            </SelectBox>
-        )
-    } else if (props.id === "kind") {
-        return (
-            <SelectBox onClick={handleClick} check={check}>
-                <SelectBox_Left>
-                    <img src={check ? kindWhite : kindPink}/>
-                    <SelectText check={check}>당신이 ‘다정함’을 느꼈다면 다정한 감정을 펀딩 해주세요</SelectText>
-                </SelectBox_Left>
-                <SelectBox_Right_2>
-                    <img src={fundingImg2}/>
-                </SelectBox_Right_2>
-            </SelectBox>
-        )
-    } else if (props.id === "thanks") {
-        return (
-            <SelectBox onClick={handleClick} check={check}>
-                <SelectBox_Left>
-                    <img src={check ? thanksWhite : thanksPink}/>
-                    <SelectText check={check}>당신이 ‘감사함’을 느꼈다면 감사한 감정을 펀딩 해주세요</SelectText>
-                </SelectBox_Left>
-                <SelectBox_Right_3>
-                    <img src={fundingImg3}/>
-                </SelectBox_Right_3>
-            </SelectBox>
-        )
-    } else if (props.id === "uncomfortable") {
-        return (
-            <SelectBox onClick={handleClick} check={check}>
-                <SelectBox_Left>
-                    <img src={check ? unWhite : unPink}/>
-                    <SelectText check={check}>당신이 ‘불편함’을 느꼈다면 불편한 감정을 펀딩 해주세요</SelectText>
-                </SelectBox_Left>
-                <SelectBox_Right_4>
-                    <img src={fundingImg4}/>
-                </SelectBox_Right_4>
-            </SelectBox>
-        )
-    }
+    const {
+        id, funding, checkedTitle, unCheckedTitle, keyword, keyword2, check, handleCheckedId
+    } = props;
+    return (
+        <SelectBox onClick={e => handleCheckedId(e, id)} check={check}>
+            <SelectBox_Left>
+                <img src={check? checkedTitle : unCheckedTitle}/>
+                <SelectText check={check}>
+                    당신이 '{keyword}'을 느꼈다면 {keyword2} 감정을 펀딩해주세요
+                </SelectText>
+            </SelectBox_Left>
+            <SelectBox_Right id={id}>
+                <img src={funding}/>
+            </SelectBox_Right>
+        </SelectBox>
+    )
 }
 
 const SelectBox = styled.div`
@@ -113,36 +51,44 @@ const SelectBox_Left = styled.div`
     font-size : 18px;
 `
 
-const SelectBox_Right_1 = styled.div`
-    width : 219px;
-    height : 180px;
+const SelectBox_Right = styled.div`
     position : absolute;
-    bottom : -3px;
-    right : 18px;
-`
-
-const SelectBox_Right_2 = styled.div`
-    width : 210px;
-    height : 130px;
-    position : absolute;
-    top : -28px;
-    right : 27px;
-`
-
-const SelectBox_Right_3 = styled.div`
-    width : 204px;
-    height : 130px;
-    position : absolute;
-    top : -28px;
-    right : 18px;
-`
-
-const SelectBox_Right_4 = styled.div`
-    width : 170px;
-    height : 142px;
-    position : absolute;
-    top : -23px;
-    right : 52px;
+    ${props =>
+        props.id === "joy" &&
+        css`
+            width : 219px;
+            height : 180px;
+            bottom : -3px;
+            right : 18px;
+        `
+    }
+    ${props =>
+        props.id === "kind" &&
+        css`
+            width : 210px;
+            height : 130px;
+            top : -28px;
+            right : 27px;
+        `
+    }
+    ${props =>
+        props.id === "thanks" &&
+        css`
+            width : 204px;
+            height : 130px;
+            top : -28px;
+            right : 18px;
+        `
+    }
+    ${props =>
+        props.id === "uncomfortable" &&
+        css`
+            width : 170px;
+            height : 142px;
+            top : -23px;
+            right : 52px;
+        `
+    }
 `
 
 
@@ -152,12 +98,6 @@ const SelectText = styled.p`
 
     ${props =>
     props.check &&
-    css`
-      color : white;
-    `}
-
-    ${props =>
-    props.checkJoy &&
     css`
       color : white;
     `}

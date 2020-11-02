@@ -1,5 +1,5 @@
 export const selectInitialState = {
-    emotionCard : '',
+    emotionCard : ""
 }
 
 export const SELECT_EMOTION = 'SELECT_EMOTION';

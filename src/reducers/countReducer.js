@@ -1,14 +1,16 @@
 export const countInitialState = {
-    joyNumber : 30,
-    kindNumber : 30,
+    joyNumber : 21,
+    kindNumber : 19,
     thanksNumber : 30,
-    unComfNumber : 30
+    unComfNumber : 8,
+    fundingPeople : 60,
 }
 
 export const JOY_INCREMENT = 'JOY_INCREMENT';
 export const KIND_INCREMENT = 'KIND_INCREMENT';
 export const THANKS_INCREMENT = 'THANKS_INCREMENT';
 export const UN_INCREMENT = 'UN_INCREMENT';
+export const PEOPLE_INCREMENT = 'PEOPLE_INCREMENT';
 
 export const joyIncrementAction = () => ({
   type: JOY_INCREMENT
@@ -24,6 +26,10 @@ export const thanksIncrementAction = () => ({
 
 export const unIncrementAction = () => ({
   type: UN_INCREMENT
+});
+
+export const peopleIncrementAction = () => ({
+  type: PEOPLE_INCREMENT
 });
 
 export const countReducer = (state = countInitialState, action) =>
@@ -51,6 +57,12 @@ export const countReducer = (state = countInitialState, action) =>
         return {
           ...state,
           unComfNumber: state.unComfNumber + 1 ,
+        };
+      }
+      case PEOPLE_INCREMENT: {
+        return {
+          ...state,
+          fundingPeople: state.fundingPeople + 1 ,
         };
       }
       default: {

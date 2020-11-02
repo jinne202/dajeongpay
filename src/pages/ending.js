@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled, { css } from 'styled-components';
 import SelectCard from '../components/SelectCard';
 import Link from 'next/link';
-import CommonButton from '../components/commonButton';
+import CommonButton from '../components/CommonButton';
 import backgroundImg from '../data/img/ending_bg.png';
 import completeTitleJoy from '../data/img/complete_title_1.png';
 import completeTitleKind from '../data/img/complete_title_2.png';
@@ -20,7 +20,7 @@ import unReceipt from '../data/img/receipt4.png';
 
 const EndingPage = () => {
     const { emotionCard } = useSelector((state) => state.selectedReducer);
-    const emotionId = emotionCard.selectId;
+    const emotionId = emotionCard.checkedId;
 
     let mainMockUp = null;
     let receiptMockUp = null;
