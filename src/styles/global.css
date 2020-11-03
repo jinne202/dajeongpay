@@ -1,13 +1,23 @@
+@font-face {
+  font-family: "gmarketMedium";
+  src : url("../data/fonts/GmarketSansTTFMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "notosans";
+  src : url("../data/fonts/NotoSans-Medium.ttf") format("truetype");
+}
+
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
   background-color: #ffeeed;
   overflow: hidden;
+  font-family: "notosans";
 }
 
 * {

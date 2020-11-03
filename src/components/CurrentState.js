@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import Countdown from '../components/Countdown';
 import subTitleImg1 from '../data/img/backer.png';
 import subTitleImg2 from '../data/img/day.png';
 import subTitleImg3 from '../data/img/status.png';
@@ -19,7 +20,7 @@ const CurrentState = () => {
                 <span><img src={subTitleImg1} alt={subTitleImg1}/></span>
             </ListBorderStyle>
             <ListBorderStyle>
-                <p>30</p>
+                <p><Countdown/></p>
                 <span><img src={subTitleImg2} alt={subTitleImg2}/></span>
             </ListBorderStyle>
             <ListStyle>
@@ -42,6 +43,7 @@ const ListStyle = styled.li`
         margin : 10px 0 0 0;
         line-height : 45px;
         color : #ff6464;
+        font-family: "gmarketMedium";
     }
 
     & > span {

@@ -1,46 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import moment from 'moment';
 // 타이머 다시 보기
-const Countdown = ( props ) => {
-    const [days, setDays] = useState(undefined);
-    const [seconds, setSeconds] = useState(undefined);
-
-    useEffect(() => {
-        setInterval(() => {
-            const { timeTillDate, timeFormat } = props;
-            const then = moment(timeTillDate, timeFormat);
-            const now = moment();
-            const countdown = moment(then - now);
-            const days = countdown.format('D');
-            const seconds = countdown.format('ss');
-            setDays(days);
-            setSeconds(seconds);
-        }, 1000)
-
-        return {
-            if (interval) {
-                clearInterval(interval);
-            }
+const Countdown = () => {
+    const calculateTimeLeft = () => {
+        let year = new Date().getFullYear();
+        const difference = +new Date(`${year + 1}-01-14`) - +new Date();
+        let timeLeft = {};
+    
+        if (difference > 0) {
+          timeLeft = {
+            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          };
         }
-    }, []);
-        return (
-            <div>
-                <div>
-                    {days && (
-                        <div>
-                            {days}
-                            <span>days</span>
-                        </div>
-                    )}
-                    {seconds && (
-                        <div>
-                            {seconds}
-                            <span>seconds</span>
-                        </div>
-                    )}
-                </div>
-            </div>
+        return timeLeft;
+      };
+    
+      const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+      const [year] = useState(new Date().getFullYear());
+
+      useEffect(() => {
+        setTimeout(() => {
+          setTimeLeft(calculateTimeLeft());
+        }, 1000 * 60 * 60);
+      });
+      
+      console.log(timeLeft);
+    
+      const timerComponents = [];
+    
+      Object.keys(timeLeft).forEach((interval) => {
+        if (!timeLeft[interval]) {
+          return;
+        }
+    
+        timerComponents.push(
+          <span>
+            {timeLeft[interval]}
+          </span>
         );
+      });
+      return (
+        <div>
+          {timerComponents.length ? timerComponents : <span>마감</span>}
+        </div>
+      );
 }
 
 export default Countdown;

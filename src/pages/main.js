@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
-import CommonButton from '../components/commonButton';
-import CurrentState from '../components/currentState';
+import CommonButton from '../components/CommonButton';
+import CurrentState from '../components/CurrentState';
 import titleImgMini from '../data/img/main_title_mini.png';
 import backgroundImg from '../data/img/main_bg.png';
 import mainMockup from '../data/img/main_mockup.png';
@@ -168,9 +168,10 @@ const GraphNumBack = styled.div`
         position : absolute;
         font-size : 36px;
         color : #ff7b7b;
-        margin : 26px 3px 0;
+        margin : 33px 5px 0;
         text-align : center;
         width : 125px;
+        font-family: "gmarketMedium";
     }
 `
 

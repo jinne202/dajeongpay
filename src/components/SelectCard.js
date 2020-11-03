@@ -95,6 +95,7 @@ const SelectBox_Right = styled.div`
 const SelectText = styled.p`
     margin : 5px 0 0 0;
     color : #333;
+    font-size : 18px;
 
     ${props =>
     props.check &&

@@ -186,12 +186,14 @@ const GraphBubbleWrapper = styled.div`
 
     & > p {
         position : absolute;
-        top : 0;
+        top : 2px;
         margin : 0;
         color : #ff7b7b;
         line-height : 34px;
         width : 67px;
         text-align : center;
+        font-family: "gmarketMedium";
+        font-size : 18px;
     }
 `
 
