@@ -96,6 +96,7 @@ const SelectText = styled.p`
     margin : 5px 0 0 0;
     color : #333;
     font-size : 18px;
+    font-family: "notosans";
 
     ${props =>
     props.check &&

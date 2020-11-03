@@ -240,6 +240,7 @@ const GraphSubTitle = styled.div`
     font-size : 20px;
     color : #333333;
     text-align : center;
+    font-family: "notosans";
 `
 
 export default SelectPage;

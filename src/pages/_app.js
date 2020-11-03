@@ -8,7 +8,7 @@ const Dajeongpay = ({ Component }) => {
   return (
     <>
       <Head>
-        <title>DAJUNG PAY</title>
+        <title>DAJEONG PAY</title>
       </Head>
       <Component />
     </>
