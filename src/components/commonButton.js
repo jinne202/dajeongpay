@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// common button 
 const CommonButton = (props) => {
     return (
         <ButtonStyle>
@@ -8,7 +9,7 @@ const CommonButton = (props) => {
         </ButtonStyle>
     )
 };
-// 깃깃
+
 const ButtonStyle = styled.button`
     width : 200px;
     height : 60px;
@@ -22,6 +23,7 @@ const ButtonStyle = styled.button`
     outline : 0;
     box-shadow : 0px 0px 10px rgba(0, 0, 0, 0.1);
     transition:all .3s ease-in-out;
+    font-family : "notosans";
 
     &:active {
         border : 0;
