@@ -70,7 +70,7 @@ const SelectCardList = () => {
                 <SelectCardWrapper>
                     <SelectCard
                         {...el}
-                        key ={key}
+                        key ={el.id}
                         check = {el.id === checkedId}
                         handleCheckedId={handleCheckedId}
                     />

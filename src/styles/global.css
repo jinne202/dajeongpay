@@ -8,6 +8,11 @@
   src : url("../data/fonts/NotoSans-Medium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "notosansBold";
+  src : url("../data/fonts/NotoSans-SemiBold.ttf") format("truetype");
+}
+
 
 html,
 body {

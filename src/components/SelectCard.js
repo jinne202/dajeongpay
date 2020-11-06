@@ -94,9 +94,10 @@ const SelectBox_Right = styled.div`
 
 const SelectText = styled.p`
     margin : 5px 0 0 0;
-    color : #333;
+    color : #444;
     font-size : 18px;
-    font-family: "notosans";
+    font-family: "notosansBold";
+    font-weight : 600;
 
     ${props =>
     props.check &&
