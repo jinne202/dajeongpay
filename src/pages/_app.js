@@ -5,6 +5,7 @@ import '../styles/global.css';
 import wrapper from '../store/configureStore';
 
 const Dajeongpay = ({ Component }) => {
+
   return (
     <>
       <Head>
