@@ -96,7 +96,7 @@ const SelectText = styled.p`
     margin : 5px 0 0 0;
     color : #444;
     font-size : 18px;
-    font-family: "notosansBold";
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight : 600;
 
     ${props =>

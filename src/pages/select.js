@@ -48,7 +48,7 @@ const SelectPage = () => {
                 <TopLeftWrapper>
                     <img src={rewordTitle} alt={rewordTitle}/>
                     <MainTextStyle>
-                    2020년 한 해를 다정하게 채워주웠던 만남들을 리마인드 해보세요.<br/> 만남 속에서 당신은 어떤 페이를 해오셨나요? <br/>기쁨, 다정함, 감사함, 불편했던 감정 들 중 당신이 느꼈던 감정을 나누어주세요.
+                    2020년 한 해를 다정하게 채워주웠던 만남들을 리마인드 해보세요<br/> 만남 속에서 당신은 어떤 페이를 해오셨나요? <br/>기쁨, 다정함, 감사함, 불편했던 감정 들 중 당신이 느꼈던 감정을 나누어주세요
                     </MainTextStyle>
                 </TopLeftWrapper>
                 <TopRightWrapper>
@@ -143,9 +143,11 @@ const TopRightWrapper = styled.div`
 const MainTextStyle = styled.p`
     font-size : 16px;
     line-height : 22px;
-    letter-spacing : -0.48px;
+    letter-spacing : -0.64px;
     margin:30px 0 0 0;
     width : 650px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight : 500;
 `
 
 const MiddleWrapper = styled.div`
@@ -218,29 +220,30 @@ const GraphFunction = styled.div`
 
 const GraphFunctionJoy = styled(GraphFunction)`
     background-color : #ff908a;
-    height : ${props => props.height}%
+    height : ${props => props.height}%;
 `
 
 const GraphFunctionKind = styled(GraphFunction)`
     background-color : #ffe1e9;
-    height : ${props => props.height}%
+    height : ${props => props.height}%;
 `
 
 const GraphFunctionThanks = styled(GraphFunction)`
     background-color : #fff8d9;
-    height : ${props => props.height}%
+    height : ${props => props.height}%;
 `
 
 const GraphFunctionUn = styled(GraphFunction)`
     background-color : #def3ff;
-    height : ${props => props.height}%
+    height : ${props => props.height}%;
 `
 
 const GraphSubTitle = styled.div`
     font-size : 20px;
     color : #333333;
     text-align : center;
-    font-family: "notosans";
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight : 500;
 `
 
 export default SelectPage;

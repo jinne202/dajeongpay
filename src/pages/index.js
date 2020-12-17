@@ -23,6 +23,7 @@ const HOME = () => {
 const MainWrapper = styled.div`
     width : 532px;
     margin : 286px auto 0;
+    font-family: 'Noto Sans KR', sans-serif;
 `
 
 const ImageCommon = styled.img`

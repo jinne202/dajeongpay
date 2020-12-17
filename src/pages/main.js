@@ -29,8 +29,8 @@ const MainPage = () => {
                     <img src={titleImgMini} alt={titleImgMini}/>
                     <MainTextStyle>
                     2020년 한 해 동안 여러 만남을 갖고 더치페이를 하면서 어떤 감정을 느끼셨나요?<br/>
-                    기쁨, 다정함, 감사함, 불편했던 감정들 중 당신이 느꼈던 감정을 나누어주세요.<br/>
-                    다정이로 디자인된 ‘QR테이블 부착 스티커’, ‘뱃지’ 로 구성된 다정 패키지를 보내드립니다.
+                    기쁨, 다정함, 감사함, 불편했던 감정들 중 당신이 느꼈던 감정을 나누어주세요<br/>
+                    다정이로 디자인된 ‘QR테이블 부착 스티커’, ‘뱃지’ 로 구성된 다정 패키지를 보내드립니다
                     </MainTextStyle>
                 </TopLeftWrapper>
                 <TopRightWrapper>
@@ -96,9 +96,11 @@ const TopRightWrapper = styled.div`
 const MainTextStyle = styled.p`
     font-size : 16px;
     line-height : 22px;
-    letter-spacing : -0.48px;
+    letter-spacing : -0.64px;
     margin:30px 0 0 0;
     width : 650px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight : 500;
 `
 
 const MiddelWrapper = styled.div`

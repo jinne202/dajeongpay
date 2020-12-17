@@ -103,6 +103,8 @@ const MainTextStyle = styled.p`
     letter-spacing : -0.48px;
     margin:30px 0 0 0;
     width : 650px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight : 500;
 `
 
 const MiddleWrapper = styled.div`
