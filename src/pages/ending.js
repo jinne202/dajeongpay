@@ -32,25 +32,25 @@ const EndingPage = () => {
         mainMockUp = <img src={joyMockUp} alt="joy"/>;
         receiptMockUp = <img src={joyReceipt} alt="joy"/>;
         completeText = <MainTextStyle>
-        기쁨을 리워드로 택해주신 당신에게는 다가오는 2021년도 크고 작은 만남들 속에서 <br/>기쁨과 정을 느끼시길 바라는 마음을 담아 '정다운 우리' 뱃지가 포함된 '기쁨 패키지'를 <br/>보내드립니다. 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요!</MainTextStyle>
+        기쁨을 리워드로 택해주신 당신에게는 다가오는 2021년도 크고 작은 만남들 속에서 <br/>기쁨과 정을 느끼시길 바라는 마음을 담아 '정다운 우리' 뱃지가 포함된 '기쁨 패키지'를 <br/>보내드립니다! 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요</MainTextStyle>
     } else if (emotionId === "kind") {
         completeTitle = <img src={completeTitleKind} alt="kind"/>
         mainMockUp = <img src={kindMockUp} alt="kind"/>;
         receiptMockUp = <img src={kindReceipt} alt="kind"/>;
         completeText = <MainTextStyle>
-        다정을 리워드로 택해주신 당신에게는 다가오는 2021년도 크고 작은 만남들 속에서 <br/> 다정함과 정을 느끼시길 바라는 마음을 담아 '다정대장' 뱃지가 포함된 '다정 패키지'를 <br/>보내드립니다. 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요!</MainTextStyle>
+        다정을 리워드로 택해주신 당신에게는 다가오는 2021년도 크고 작은 만남들 속에서 <br/> 다정함과 정을 느끼시길 바라는 마음을 담아 '다정대장' 뱃지가 포함된 '다정 패키지'를 <br/>보내드립니다! 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요</MainTextStyle>
     } else if (emotionId === "thanks") {
         completeTitle = <img src={completeTitleThanks} alt="thanks"/>
         mainMockUp = <img src={thanksMockUp} alt="thanks"/>;
         receiptMockUp = <img src={thanksReceipt} alt="thanks"/>;
         completeText = <MainTextStyle>
-        감사를 리워드로 택해주신 당신에게는 다가오는 2021년도 크고 작은 만남들 속에서 <br/> 감사함과 정을 느끼시길 바라는 마음을 담아 '받았정' 뱃지가 포함된 '감사 패키지'를 <br/> 보내드립니다. 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요!</MainTextStyle>
+        감사를 리워드로 택해주신 당신에게는 다가오는 2021년도 크고 작은 만남들 속에서 <br/> 감사함과 정을 느끼시길 바라는 마음을 담아 '받았정' 뱃지가 포함된 '감사 패키지'를 <br/> 보내드립니다! 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요</MainTextStyle>
     } else if (emotionId === "uncomfortable") {
         completeTitle = <img src={completeTitleUn} alt="uncomfortable"/>
         mainMockUp = <img src={unMockUp} alt="uncomfortable"/>;
         receiptMockUp = <img src={unReceipt} alt="uncomfortable"/>;
         completeText = <MainTextStyle>
-        불편을 리워드로 택해주신 당신에게는 다가오는 2021년에는 크고 작은 만남들 속에서 <br/> 불편보다는 정다움을 느끼시길 바라는 마음을 담아 '정의의 용사' 뱃지가 포함된 '정의 패키지'를 <br/> 보내드립니다. 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요!</MainTextStyle>
+        불편을 리워드로 택해주신 당신에게는 다가오는 2021년에는 크고 작은 만남들 속에서 <br/> 불편보다는 정다움을 느끼시길 바라는 마음을 담아 '정의의 용사' 뱃지가 포함된 '정의 패키지'를 <br/> 보내드립니다! 2021년도 다정페이와 함께 즐거운 더치페이 라이프를 즐겨보세요</MainTextStyle>
     } 
 
     return (
