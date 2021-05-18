@@ -20,7 +20,7 @@ https://dajeong-pay.netlify.app
 
 - redux를 사용한 카운터
 - 라디오 박스
-- %에 맞게 css 조절
+- 그래프에 맞게 css 조절
 - netlify 배포
 
 ***
