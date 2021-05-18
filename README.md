@@ -1,4 +1,4 @@
-# :sparkler: Dejeongpay   
+# :sparkler: Dajeongpay   
 
 ```sh
 npm run dev
